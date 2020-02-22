@@ -344,3 +344,6 @@ tools/**
 BuildArtifacts/*
 
 .DS_Store
+
+# Ingore vagrant folder
+.vagrant/
