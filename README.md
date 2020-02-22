@@ -42,9 +42,16 @@ Depending on the function of the machine you are running this on, you can use se
 |vbr_management.ps1|Install Veeam Backup & Replication management console, including the explorers|
 |vbr_proxy.ps1|Install Veeam Backup & Replication proxy server|
 
+### VBO Scripts
+
+|Script|Function|
+|-|-|
+|vbo_all.ps1|Install all the VBO packages|
+|vbo_server.ps1|Install Veeam Backup & Replication server|
+|vbo_management.ps1|Install Veeam Backup & Replication management console, including the explorers|
+
 Example:
 
 ````powershell
-$credentials=Get-Credential
-Install-BoxstarterPackage -PackageName vbr_all.ps1 -Credential $credentials
+boxstarter.bat c:\path\to\my\vbr_scripts\vbr_all.ps1
 ````
