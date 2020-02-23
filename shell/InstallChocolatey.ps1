@@ -101,5 +101,5 @@ choco config set commandExecutionTimeoutSeconds 14400
 # choco feature enable --name="'exitOnRebootDetected'"
 # choco feature enable --name="'useRememberedArgumentsForUpgrades'"
 choco install Boxstarter
-New-Item c:\Temp -Type Directory
-Copy-Item c:\vagrant\* C:\temp -Recurse
+New-Item c:\Temp -Type Directory -ErrorAction SilentlyContinue
+Copy-Item c:\vagrant\* C:\temp -Recurse -Force
