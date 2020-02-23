@@ -97,9 +97,11 @@ choco feature enable --name="'logEnvironmentValues'"
 choco config set commandExecutionTimeoutSeconds 14400
 
 # Sources - Add internal repositories
-# choco source add --name="'local'" --source="'c:\packages'" --priority="'2'" --bypass-proxy --allow-self-service
+choco source add --name="'local'" --source="'c:\packages'" --priority="'2'" --bypass-proxy --allow-self-service
 # choco feature enable --name="'exitOnRebootDetected'"
 # choco feature enable --name="'useRememberedArgumentsForUpgrades'"
 choco install Boxstarter
 New-Item c:\Temp -Type Directory -ErrorAction SilentlyContinue
 Copy-Item c:\vagrant\* C:\temp -Recurse -Force
+
+Move-Item c:\temp\packages c:\packages -ErrorAction SilentlyContinue -Force
