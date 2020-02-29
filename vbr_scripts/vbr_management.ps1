@@ -16,5 +16,11 @@ $commonDir += "\common_scripts"
 Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
 Invoke-Expression "${scriptsDir}\common_packages.ps1"
 
-Write-Output "Installing SQL Server Express"
-choco upgrade sql-server-express
+Write-Output "Installing VBR Management console"
+choco upgrade veeam-backup-and-replication-console
+choco upgrade veeam-explorer-for-microsoft-active-directory
+choco upgrade veeam-explorer-for-microsoft-exchange
+choco upgrade veeam-explorer-for-microsoft-sharepoint
+choco upgrade veeam-explorer-for-microsoft-sql-server
+choco upgrade veeam-explorer-for-oracle
+choco upgrade veeam-backup-and-replication-management

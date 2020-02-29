@@ -40,7 +40,8 @@ Depending on the function of the machine you are running this on, you can use se
 |vbr_sql_express.ps1|Install an SQL Express|
 |vbr_server.ps1|Install Veeam Backup & Replication server|
 |vbr_management.ps1|Install Veeam Backup & Replication management console, including the explorers|
-|vbr_proxy.ps1|Install Veeam Backup & Replication proxy server|
+|vbr_proxy.ps1|Install Veeam Backup & Replication proxy server **(soon)**|
+|vbr_repository.ps1|Install Veeam Backup & Replicaton repository server **(soon)**|
 
 ### VBO Scripts
 
@@ -53,5 +54,6 @@ Depending on the function of the machine you are running this on, you can use se
 Example:
 
 ````powershell
-boxstarter.bat c:\path\to\my\vbr_scripts\vbr_all.ps1
+$credentials = Get-Credentials
+Install-BoxstarterPackage -PackageName c:\path\to\my\vbr_scripts\vbr_all.ps1 -Credentials $credentials
 ````

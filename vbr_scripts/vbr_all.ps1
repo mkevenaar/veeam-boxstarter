@@ -10,5 +10,11 @@ $scriptsDir = $scriptsDir.TrimStart("'", " ")
 $scriptsDir = $scriptsDir.TrimEnd("'", " ")
 $scriptsDir = $scriptsDir.Substring(0, $scriptsDir.LastIndexOf("\"))
 
-Invoke-Expression (Join-Path $scriptsDir 'settings.ps1')
+$commonDir = $scriptsDir.Substring(0, $scriptsDir.LastIndexOf("\"))
+$commonDir += "\common_scripts"
+
+Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
+
 Invoke-Expression (Join-Path $scriptsDir 'vbr_sql_express.ps1')
+Invoke-Expression (Join-Path $scriptsDir 'vbr_server.ps1')
+Invoke-Expression (Join-Path $scriptsDir 'vbr_management.ps1')
