@@ -8,7 +8,7 @@ This repository allows you to install different Veeam software configurations de
 
 ## Step 2: **Configure settings.**
 
-**NOTE:** Only required for VBR
+**NOTE:** Only required for the `vbr_scripts` folder.
 
 Edit the `settings.ps1` file and change the settings you want to change.
 
