@@ -31,7 +31,7 @@ function Get-VBR-Params($settings) {
 }
 
 $vbr_catalog_settings = @('vbr_username','vbr_password','vbr_create','vbr_catalogLocation','vbr_catalogPort')
-$vbr_catalog_params = Get-VBR-Params($vbr_catalog_settings)
+$vbr_catalog_params = ((Get-VBR-Params($vbr_catalog_settings)) -Replace 'catalogPort', 'port')
 
 $vbr_server_settings = @('vbr_nfsDatastoreLocation','vbr_backupPort','vbr_mountserverPort','vbr_licenseFile','vbr_sqlServer','vbr_sqlDatabase','vbr_sqlAuthentication','vbr_sqlUsername','vbr_sqlPassword','vbr_username','vbr_password','vbr_create')
 $vbr_server_params = Get-VBR-Params($vbr_server_settings)
