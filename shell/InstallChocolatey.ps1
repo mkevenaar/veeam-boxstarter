@@ -104,4 +104,4 @@ choco install Boxstarter
 New-Item c:\Temp -Type Directory -ErrorAction SilentlyContinue
 Copy-Item c:\vagrant\* C:\temp -Recurse -Force
 
-Move-Item c:\temp\packages c:\packages -ErrorAction SilentlyContinue -Force
+Move-Item c:\temp\packages\* c:\packages\ -ErrorAction SilentlyContinue -Force
