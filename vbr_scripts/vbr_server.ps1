@@ -2,6 +2,10 @@
 # Author: Maurice Kevenaar
 # This boxstarter scrips installs VBR Server.
 
+New-Item -Path "$env:systemdrive\ProgramData\ChocoCache" -ItemType directory -Force | Out-Null
+$common = "--cacheLocation=`"$env:systemdrive\ProgramData\ChocoCache`""
+
+
 $bstrappackage = "-bootstrapPackage"
 $scriptsDir = $Boxstarter['ScriptToCall']
 $strpos = $scriptsDir.IndexOf($bstrappackage)
@@ -38,7 +42,7 @@ $vbr_server_params = Get-VBR-Params($vbr_server_settings)
 
 Write-Output "Installing VBR Server"
 
-choco upgrade vcredist140
-choco upgrade ms-reportviewer2015
-choco upgrade veeam-backup-and-replication-catalog --params "${vbr_catalog_params}"
-choco upgrade veeam-backup-and-replication-server --params "${vbr_server_params}"
+choco upgrade vcredist140 $common
+choco upgrade ms-reportviewer2015 $common
+choco upgrade veeam-backup-and-replication-catalog --params "${vbr_catalog_params}" $common
+choco upgrade veeam-backup-and-replication-server --params "${vbr_server_params}" $common

@@ -1,6 +1,10 @@
 # Description: Boxstarter script
 # Author: Maurice Kevenaar
-# This boxstarter scrips installs SQL Express.
+# This boxstarter scrips installs VBR Management..
+
+New-Item -Path "$env:systemdrive\ProgramData\ChocoCache" -ItemType directory -Force | Out-Null
+$common = "--cacheLocation=`"$env:systemdrive\ProgramData\ChocoCache`""
+
 
 $bstrappackage = "-bootstrapPackage"
 $scriptsDir = $Boxstarter['ScriptToCall']
@@ -17,10 +21,10 @@ Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
 Invoke-Expression "${scriptsDir}\common_packages.ps1"
 
 Write-Output "Installing VBR Management console"
-choco upgrade veeam-backup-and-replication-console
-choco upgrade veeam-explorer-for-microsoft-active-directory
-choco upgrade veeam-explorer-for-microsoft-exchange
-choco upgrade veeam-explorer-for-microsoft-sharepoint
-choco upgrade veeam-explorer-for-microsoft-sql-server
-choco upgrade veeam-explorer-for-oracle
-choco upgrade veeam-backup-and-replication-management
+choco upgrade veeam-backup-and-replication-console $common
+choco upgrade veeam-explorer-for-microsoft-active-directory $common
+choco upgrade veeam-explorer-for-microsoft-exchange $common
+choco upgrade veeam-explorer-for-microsoft-sharepoint $common
+choco upgrade veeam-explorer-for-microsoft-sql-server $common
+choco upgrade veeam-explorer-for-oracle $common
+choco upgrade veeam-backup-and-replication-management $common

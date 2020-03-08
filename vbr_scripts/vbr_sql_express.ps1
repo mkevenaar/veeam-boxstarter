@@ -2,6 +2,10 @@
 # Author: Maurice Kevenaar
 # This boxstarter scrips installs SQL Express.
 
+New-Item -Path "$env:systemdrive\ProgramData\ChocoCache" -ItemType directory -Force | Out-Null
+$common = "--cacheLocation=`"$env:systemdrive\ProgramData\ChocoCache`""
+
+
 $bstrappackage = "-bootstrapPackage"
 $scriptsDir = $Boxstarter['ScriptToCall']
 $strpos = $scriptsDir.IndexOf($bstrappackage)
@@ -16,23 +20,12 @@ $commonDir += "\common_scripts"
 Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
 Invoke-Expression "${scriptsDir}\common_packages.ps1"
 
-$PSversion = $PSVersionTable.PSVersion.Major
-if ($PSversion -lt "5") {
-    Write-Warning "  ** PowerShell < v5 detected."
-	Write-Warning "  ** This scripts installs software via the PowerShell Gallery and thus requires PowerShell v5+."
-	Write-Warning "  ** If PowerShell v5 was installed as a dependency, you need to reboot and reinstall this package."
-	throw
-}
-
-$invokeCommandAs = Get-Command -Name 'Invoke-CommandAs' -Module 'Invoke-CommandAs' -ErrorAction 'SilentlyContinue'
-
-if ( $null -eq $invokeCommandAs ){
-    Get-PackageProvider -Name NuGet -Force
-    Install-Module -Name Invoke-CommandAs -Force -Scope AllUsers
-}
-
 Write-Output "Installing SQL Server Express"
-Invoke-CommandAs -ScriptBlock { choco upgrade sql-server-express } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
+Invoke-CommandAs -ScriptBlock { choco upgrade sql-server-express $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
+
+# Installing SSMS, as I believe this should be part of the installation.
+Invoke-CommandAs -ScriptBlock { choco upgrade ssms $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
+
 
 if (Test-PendingReboot) { 
     Invoke-Reboot
