@@ -79,7 +79,7 @@ This is tested with the following setup:
 * [StefanScherer/windows_2016](https://app.vagrantup.com/StefanScherer/boxes/windows_2016) box based on his [packer templates](https://github.com/StefanScherer/packer-windows).
 * Run `vagrant up` to boot the Vagrant box.
 
-### Additonal notes
+### Additional notes
 
 * If required, put your packages in the `packages` folder.
 * The contents of this directory will be copied to `c:\temp`
