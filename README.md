@@ -92,6 +92,6 @@ This is tested with the following setup:
   * Change `$vbr_licenseFile` to `'c:\packages\myfile.lic'`
   * Change `$vbr_sqlServer` to `'VAGRANT\SQLEXPRESS'`
   * Change `$vbr_username` to `'vagrant'`
-  * Chnage `$vbr_password` to `'vagrant'`
+  * Change `$vbr_password` to `'vagrant'`
 
 After you have installed these packages, you can continue with step 2 above.
