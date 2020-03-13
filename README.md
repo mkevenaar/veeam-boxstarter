@@ -14,7 +14,7 @@ Run the following commands in an Elevated powershell.
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ````
 
-For more information regarding the installaton of Chocolatey please have a look at their [documentation](https://chocolatey.org/install)
+For more information regarding the installation of Chocolatey please have a look at their [documentation](https://chocolatey.org/install)
 
 ````powershell
 choco install Boxstarter
@@ -41,7 +41,7 @@ Depending on the function of the machine you are running this on, you can use se
 |vbr_server.ps1|Install Veeam Backup & Replication server|
 |vbr_management.ps1|Install Veeam Backup & Replication management console, including the explorers|
 |vbr_proxy.ps1|Install Veeam Backup & Replication proxy server **(soon)**|
-|vbr_repository.ps1|Install Veeam Backup & Replicaton repository server **(soon)**|
+|vbr_repository.ps1|Install Veeam Backup & Replication repository server **(soon)**|
 
 ### VBO Scripts
 
@@ -83,7 +83,7 @@ This is tested with the following setup:
 
 * If required, put your packages in the `packages` folder.
 * The contents of this directory will be copied to `c:\temp`
-* The contents of the `packages` folder will be availalbe in `c:\packages`
+* The contents of the `packages` folder will be available in `c:\packages`
 
 ### `vbr_all.ps1` Vagrant only (Full VBR PoC setup)
 
