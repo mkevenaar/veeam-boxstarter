@@ -64,35 +64,35 @@ For testing purposes, I have added a Vagrantfile in this repository.
 
 This is tested with the following setup:
 
-* Windows 10, Version 1909 (Probably any OS compatible with Vagrant v2.1.5 and VirtualBox v5.2.36 should work.)
-* Vagrant v2.1.5:
+- Windows 10, Version 1909 (Probably any OS compatible with Vagrant v2.1.5 and VirtualBox v5.2.36 should work.)
+- Vagrant v2.1.5:
 
   ````powershell
   choco install vagrant --version=2.1.5
   ````
 
-* VirtualBox v5.2.36:
+- VirtualBox v5.2.36:
 
   ````powershell
   choco install virtualbox --version=5.2.36
   ````
 
-* [StefanScherer/windows_2016](https://app.vagrantup.com/StefanScherer/boxes/windows_2016) box based on his [packer templates](https://github.com/StefanScherer/packer-windows).
-* Run `vagrant up` to boot the Vagrant box.
+- [StefanScherer/windows_2016](https://app.vagrantup.com/StefanScherer/boxes/windows_2016) box based on his [packer templates](https://github.com/StefanScherer/packer-windows).
+- Run `vagrant up` to boot the Vagrant box.
 
 ### Additional notes
 
-* If required, put your packages in the `packages` folder.
-* The contents of this directory will be copied to `c:\temp`
-* The contents of the `packages` folder will be available in `c:\packages`
+- If required, put your packages in the `packages` folder.
+- The contents of this directory will be copied to `c:\temp`
+- The contents of the `packages` folder will be available in `c:\packages`
 
 ### `vbr_all.ps1` Vagrant only (Full VBR PoC setup)
 
-* Put a license file inside the `packages` folder.
-* In the `settings.ps1` file:
-  * Change `$vbr_licenseFile` to `'c:\packages\myfile.lic'`
-  * Change `$vbr_sqlServer` to `'VAGRANT\SQLEXPRESS'`
-  * Change `$vbr_username` to `'vagrant'`
-  * Change `$vbr_password` to `'vagrant'`
+- Put a license file inside the `packages` folder.
+- In the `settings.ps1` file:
+  - Change `$vbr_licenseFile` to `'c:\packages\myfile.lic'`
+  - Change `$vbr_sqlServer` to `'VAGRANT\SQLEXPRESS'`
+  - Change `$vbr_username` to `'vagrant'`
+  - Change `$vbr_password` to `'vagrant'`
 
 After you have installed these packages, you can continue with step 2 above.
