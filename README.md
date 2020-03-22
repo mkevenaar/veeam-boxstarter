@@ -4,7 +4,8 @@ This repository allows you to install different Veeam software configurations de
 
 ## Step 1: **Download repository.**
 
-[Download](https://github.com/mkevenaar/veeam-boxstarter/archive/master.zip) this repository and extract it to a local folder.
+- [Download](https://github.com/mkevenaar/veeam-boxstarter/archive/master.zip) latest stable release of this repository and extract it to a local folder *(recommended)*.
+- [Download](https://github.com/mkevenaar/veeam-boxstarter/archive/develop.zip) latest unstable commit of this repository and extract it to a local folder.
 
 ## Step 2: **Install Chocolatey and BoxStarter**
 
