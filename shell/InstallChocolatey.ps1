@@ -36,7 +36,7 @@ param (
     throw "No file exists at $chocolateyPackageFilePath"
   }
 
-  if ($env:TEMP -eq $null) {
+  if ($null -eq $env:TEMP) {
     $env:TEMP = Join-Path $env:SystemDrive 'temp'
   }
   $chocTempDir = Join-Path $env:TEMP "chocolatey"
@@ -79,9 +79,9 @@ if (!(Test-Path $ChocoInstallPath)) {
     Install-LocalChocolateyPackage $localChocolateyPackageFilePath
   } else {
     if ($installLatestBeta) {
-      iex ((new-object net.webclient).DownloadString('https://chocolatey.org/installabsolutelatest.ps1'))
+      Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/installabsolutelatest.ps1'))
     } else {
-      iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+      Invoke-Expression ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
     }
   }
 }
@@ -101,7 +101,9 @@ choco source add --name="'local'" --source="'c:\packages'" --priority="'2'" --by
 # choco feature enable --name="'exitOnRebootDetected'"
 # choco feature enable --name="'useRememberedArgumentsForUpgrades'"
 choco install Boxstarter
-New-Item c:\Temp -Type Directory -ErrorAction SilentlyContinue
-Copy-Item c:\vagrant\* C:\temp -Recurse -Force
 
-Move-Item c:\temp\packages\* c:\packages\ -ErrorAction SilentlyContinue -Force
+# Copy over files
+New-Item c:\Temp -Type Directory -ErrorAction SilentlyContinue
+
+robocopy c:\vagrant\ C:\temp\ /mir /copyall /R:1 /NJH /NJS /NDL /NC /NS
+robocopy c:\temp\packages\ c:\packages\ /mir /copyall /R:1 /NJH /NJS /NDL /NC /NS
