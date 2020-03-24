@@ -6,4 +6,15 @@
   "[powershell]": {
     "files.encoding": "utf8bom",
   },
+  "cSpell.ignoreWords": [
+    "boxstarter",
+    "choco",
+    "myfile",
+    "scherer",
+    "sqlexpress",
+    "tada",
+    "vagrantfile",
+    "veeam",
+    "virtualbox"
+  ],
 }
