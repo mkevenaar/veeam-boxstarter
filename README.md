@@ -52,6 +52,17 @@ Depending on the function of the machine you are running this on, you can use se
 |vbo_server.ps1|Install Veeam Backup for o365 server|
 |vbo_management.ps1|Install Veeam Backup for o365 management console, including the explorers|
 
+### VONE Scripts
+
+|Script|Function|
+|-|-|
+|vone_all.ps1|Install all the VONE packages|
+|vone_sql_express.ps1|Install an SQL Express|
+|vone_agent.ps1|Install Veeam ONE agent (e.g. on VBR Server)|
+|vone_server.ps1|Install Veeam ONE server|
+|vone_management.ps1|Install Veeam ONE Monitor Client|
+|vone_webui.ps1|Install Veeam ONE Reporter WebUI|
+
 Example:
 
 ````powershell
@@ -94,5 +105,18 @@ This is tested with the following setup:
   - Change `$vbr_sqlServer` to `'VAGRANT\SQLEXPRESS'`
   - Change `$vbr_username` to `'vagrant'`
   - Change `$vbr_password` to `'vagrant'`
+
+After you have installed these packages, you can continue with step 2 above.
+
+### `vone_all.ps1` Vagrant only (Full VONE PoC setup)
+
+- Put a license file inside the `packages` folder.
+- In the `settings.ps1` file:
+  - Change `$vone_vcSelectedType` to `2` (skip the virtual infrastructure configuration)
+  - Change `$vone_backupAddLater` to `1` (skip the add of VBR to VONE)
+  - Change `$vone_licenseFile` to `'c:\packages\myfile.lic'`
+  - Change `$vone_sqlServer` to `'VAGRANT\SQLEXPRESS'`
+  - Change `$vone_username` to `'vagrant'`
+  - Change `$vone_password` to `'vagrant'`
 
 After you have installed these packages, you can continue with step 2 above.
