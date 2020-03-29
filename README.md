@@ -49,8 +49,8 @@ Depending on the function of the machine you are running this on, you can use se
 |Script|Function|
 |-|-|
 |vbo_all.ps1|Install all the VBO packages|
-|vbo_server.ps1|Install Veeam Backup & Replication server|
-|vbo_management.ps1|Install Veeam Backup & Replication management console, including the explorers|
+|vbo_server.ps1|Install Veeam Backup for o365 server|
+|vbo_management.ps1|Install Veeam Backup for o365 management console, including the explorers|
 
 Example:
 
