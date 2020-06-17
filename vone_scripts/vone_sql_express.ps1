@@ -21,10 +21,10 @@ Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
 Invoke-Expression "${scriptsDir}\common_packages.ps1"
 
 Write-Output "Installing SQL Server Express"
-Invoke-CommandAs -ScriptBlock { choco upgrade sql-server-express $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
+Invoke-CommandAs -ScriptBlock { choco upgrade sql-server-express -y $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
 
 # Installing SSMS, as I believe this should be part of the installation.
-Invoke-CommandAs -ScriptBlock { choco upgrade ssms $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
+Invoke-CommandAs -ScriptBlock { choco upgrade ssms -y $common } -ComputerName $env:COMPUTERNAME -AsInteractive $env:USERNAME
 
 
 if (Test-PendingReboot) { 
