@@ -26,5 +26,6 @@ choco upgrade veeam-explorer-for-microsoft-active-directory $common
 choco upgrade veeam-explorer-for-microsoft-exchange $common
 choco upgrade veeam-explorer-for-microsoft-sharepoint $common
 choco upgrade veeam-explorer-for-microsoft-sql-server $common
+choco upgrade veeam-explorer-for-microsoft-teams $common
 choco upgrade veeam-explorer-for-oracle $common
 choco upgrade veeam-backup-and-replication-management $common

@@ -21,7 +21,7 @@ Invoke-Expression "${commonDir}\setup_chocolatey.ps1"
 Invoke-Expression "${scriptsDir}\common_packages.ps1"
 . "${scriptsDir}\settings.ps1"
 
-$vone_reporter_webui_settings = @('vone_iisSitePort', 'vone_sslThumbprint', 'vone_installationType', 'vone_sqlServer', 'vone_sqlDatabase', 'vone_sqlAuthentication', 'vone_sqlUsername', 'vone_sqlPassword', 'vone_username', 'vone_password', 'vone_create')
+$vone_reporter_webui_settings = @('vone_iisSitePort', 'vone_sslThumbprint', 'vone_oneServer', 'vone_username', 'vone_password', 'vone_create')
 $vone_reporter_webui_parameterts = Get-VONE-Params($vone_reporter_webui_settings)
 
 Write-Output "Installing VONE WebUI"

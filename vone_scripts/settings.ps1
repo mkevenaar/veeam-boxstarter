@@ -194,6 +194,11 @@ $vone_iisSitePort = $null
 # Example: $vone_sslThumbprint = 0677d0b8f27caccc966b15d807b41a101587b488
 $vone_sslThumbprint = $null
 
+# Specifies FQDN or IP address of the server where Veeam ONE Reporter Service 
+# is installed. 
+# Example: `/oneServer:oneserver.tech.local`
+$vone_oneServer = $null
+
 # ---------------------------------------------------------------------------- #
 ## Functions
 
