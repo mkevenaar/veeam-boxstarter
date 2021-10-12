@@ -23,7 +23,7 @@ jobs:
         run: zip -x '*.git*' -r release.zip . 
 
       - name: Extract owner and repo
-        uses: jungwinter/split@v1
+        uses: jungwinter/split@v2
         id: repo
         with:
           seperator: '/'
