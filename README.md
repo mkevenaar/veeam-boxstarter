@@ -1,5 +1,9 @@
 # Veeam Boxstarter templates
 
+[![Version](https://img.shields.io/github/v/release/mkevenaar/veeam-boxstarter.svg?color=brightgreen&label=version)](https://github.com/mkevenaar/veeam-boxstarter/releases/latest)
+[![Released](https://img.shields.io/badge/dynamic/json.svg?color=brightgreen&label=released&url=https://api.github.com/repos/mkevenaar/veeam-boxstarter/releases&query=$[0].published_at)](https://github.com/mkevenaar/veeam-boxstarter/releases/latest)
+![GitHub Releases (all releases)](https://img.shields.io/github/downloads/mkevenaar/veeam-boxstarter/total.svg)
+
 This repository allows you to install different Veeam software configurations depending on your requirements.
 
 ## Step 1: **Download repository.**
