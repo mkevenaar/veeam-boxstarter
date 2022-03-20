@@ -15,7 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         
-
       - name: Fetch all history for all tags and branches
         run: git fetch --prune --unshallow
 
@@ -23,7 +22,7 @@ jobs:
         run: zip -x '*.git*' -r release.zip . 
 
       - name: Extract owner and repo
-        uses: jungwinter/split@v2
+        uses: jungwinter/split@v1
         id: repo
         with:
           seperator: '/'
