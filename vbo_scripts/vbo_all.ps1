@@ -1,6 +1,6 @@
 # Description: Boxstarter script
 # Author: Maurice Kevenaar
-# This boxstarter scrips installs all required parts of VBO.
+# This boxstarter scrips installs all required parts of VBM.
 
 $bstrappackage = "-bootstrapPackage"
 $scriptsDir = $Boxstarter['ScriptToCall']

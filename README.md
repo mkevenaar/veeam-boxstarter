@@ -48,7 +48,11 @@ Depending on the function of the machine you are running this on, you can use se
 |vbr_proxy.ps1|Install Veeam Backup & Replication proxy server **(soon)**|
 |vbr_repository.ps1|Install Veeam Backup & Replication repository server **(soon)**|
 
-### VBO Scripts
+### VBM Scripts
+
+***
+:warning: The filenames still have the old VBO name for backward compatibility.
+***
 
 |Script|Function|
 |-|-|
